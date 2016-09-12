@@ -1,0 +1,63 @@
+import javax.swing.*;
+
+/**
+ * @Author  Milan Jansen on 12-09-16.
+ */
+public class askNumber {
+
+    /**
+     * Main function
+     * @param args
+     */
+    public static void main (String[] args) {
+        String type;
+        type = JOptionPane.showInputDialog("int of double");
+
+
+        switch(type) {
+            case "int":
+                askIntNumber();
+                break;
+            case "double":
+                askDoubleNumber();
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Fail...");
+                break;
+        }
+    }
+
+    /**
+     * Ask for number to calculate average.
+     * Gebroken getal
+     */
+    private static void askDoubleNumber() {
+        double number1, number2, number3;
+
+        number1 = Double.parseDouble(JOptionPane.showInputDialog(null, " Kies een getal: "));
+        number2 = Double.parseDouble(JOptionPane.showInputDialog(null, " Kies een getal: "));
+        number3 = Double.parseDouble(JOptionPane.showInputDialog(null, " Kies een getal: "));
+
+        double total = number1 + number2 + number3;
+        double average = total / 3;
+
+        JOptionPane.showMessageDialog(null, "Totaal: " + total + "\n" + "Gemiddelde: " + Math.ceil(average * 100)/100);
+    }
+
+    /**
+     * Ask for number to calculate average.
+     * Heel getal
+     */
+    private static void askIntNumber() {
+        int number1,number2, number3;
+
+        number1 = Integer.parseInt(JOptionPane.showInputDialog(null," Kies een getal: "));
+        number2 = Integer.parseInt(JOptionPane.showInputDialog(null," Kies een getal: "));
+        number3 = Integer.parseInt(JOptionPane.showInputDialog(null," Kies een getal: "));
+
+        int total = number1 + number2 + number3;
+        int average = total / 3;
+
+        JOptionPane.showMessageDialog(null, "Totaal: " + total + "\n" + "Gemiddelde: " + Math.ceil(average * 100)/100);
+    }
+}
